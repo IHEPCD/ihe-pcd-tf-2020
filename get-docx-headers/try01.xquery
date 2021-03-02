@@ -2,7 +2,7 @@ xquery version "3.0";
 
 
 declare namespace ext="http://www.altova.com/xslt-extensions";
-
+n 
 declare namespace w="http://schemas.openxmlformats.org/wordprocessingml/2006/main";
 
 (:  /w:document/w:body/w:p[w:pPr/w:pStyle/starts-with(./@w:val,"Heading")]/data(w:r)
