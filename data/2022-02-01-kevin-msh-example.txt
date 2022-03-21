@@ -1,0 +1,28 @@
+Example FHIR MSH conversion result:  
+
+{
+  "resourceType" : "MessageHeader",                    
+   "language" : "en-us”                                    // Language of the resource content - <English:ISO639>"
+  "eventCoding" :  “UTF8”,                          
+  "eventUri" : "<uri>",                                      // ORU^R01^ORU_R01 – Event workflow not done yet by FHIR.  Placeholder for now.   
+  "destination" : 
+   [{                                                                          // Message destination application(s)
+        "name" : "ReceivingFacility”,                     // Name of receiving facility from HL7
+        "endpoint" : "hostname",                          // hostname from ConfigHost of configured HL7 target 
+        "receiver" :  “ReceivingApplication”         // directly from ReceivingApplication of HL7 
+   }],
+  "sender" :                                                          // FHIR ->  { Reference(Practitioner|PractitionerRole|Organization) }, possible values
+       //  sender folds into FHIR “source” field
+  "source" : 
+{                                                                             // R!  Message source application
+    "name" : "SendingFacility",                          // Name of system
+    "software" : "SendingApplication",             // PIC iX  Name of software running the system
+    "version" : "4.0",                                             // PIC iX version of software running
+    "endpoint" : " USDANRMMD1NBR488"      // HP0425230332.872USDANRMMD1NBR488   - machine name - direct parse of HL7 msg unique id
+  },
+   "identifier" : "0425230332.872USDANRMMD1NBR488",      // direct map of HL7 msg unique id field 
+  },
+     "definition" :  Implementation Guide reference:  ) }             // Implementation guide reference site.  URL of this guide – TBD until released
+}
+
+TBD:   P|D|T – D in the case of our MSH segment MSH.11 below translates to “MessageDefinition” resource in FHIR.  Boolean “status” captures this “status” e.g. active, draft, etc.

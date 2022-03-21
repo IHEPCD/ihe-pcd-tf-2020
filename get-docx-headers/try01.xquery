@@ -14,5 +14,5 @@ for $para in doc("C:\Users\jrhoads\projects\ihe-pcd-tf-2020\get-docx-headers\Sam
 problem with this: lots of extra whitespace, including returns, in <b>{$para/data(w:r)}</b>
 :)
 for $para in doc("document.xml")//w:p[w:pPr/w:pStyle/starts-with(./@w:val,"Heading")]
- return ( <style-name>{$para/w:pPr/w:pStyle/data(@*)}</style-name>, <content>{$para/normalize-space(data(w:r))}</content>)
+ return ( <p><style-name>{$para/w:pPr/w:pStyle/data(@*)}</style-name>, <content>{$para/normalize-space(data(w:r))}</content></p>)
 
