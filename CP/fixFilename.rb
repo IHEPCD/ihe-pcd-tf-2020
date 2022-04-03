@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby -w
 
+=begin
+Renames files with spaces funky characters to easier-to-use filenames with the characters replaced with better ones
+=end
+
 unless ARGV[0]
     puts "Usage: ruby fixFilename.rb <filename.ext>"
     puts "Example: ruby fisFilename.rb \'How to (make) 20% more on $500.pdf\'"
