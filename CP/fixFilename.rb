@@ -32,4 +32,4 @@ replacements.each do |orig, fix|
   name.gsub!(orig,fix)
 end
 
-puts "#{old_filename} -->  #{name + ext}"
+puts "mv '#{old_filename}'  '#{name + ext}'"
